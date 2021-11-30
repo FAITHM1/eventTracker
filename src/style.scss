@@ -1,0 +1,266 @@
+$turquoise: rgb(68, 182, 200);
+$crimson: rgb(207, 90, 94);
+$powderblue: rgb(168, 225, 225);
+$lightStealblue: rgb(198, 229, 243);
+$lavender: rgb(230, 236, 238);
+$lavender2: rgb(204, 242, 255);
+$darkerTurquoise: rgb(16, 126, 143);
+* {
+  // outline: 2px solid red;
+}
+@mixin display {
+  display: flex;
+  justify-content: space-around;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.App {
+  margin: 0 0.5%;
+
+  //background-color: $crimson;
+}
+header {
+  box-sizing: border-box;
+  @include display;
+  justify-content: space-between;
+  height: 8vh;
+  background-color: $lavender;
+
+  border-bottom: 2px solid $darkerTurquoise;
+  img {
+    margin: 10px;
+    width: 10%;
+    // height: auto;
+  }
+  nav {
+    @include display;
+    width: 60%;
+    margin: auto;
+    // margin-right: 1%;
+    justify-content: space-between;
+    a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: rgb(0, 119, 255);
+      font-weight: 600;
+      transition: color 0.5s, transfrom 0.5s;
+    }
+    a:hover {
+      transform: scale(1.1);
+      color: $crimson;
+    }
+  }
+}
+main {
+  height: 88vh;
+  flex: 1 0 auto;
+  background-color: $lightStealblue;
+}
+span {
+  color: $turquoise;
+  font-weight: bolder;
+}
+.allEvents {
+  @include display;
+  flex-direction: column;
+  width: 100%;
+  background-color: $lightStealblue;
+  height: 88vh;
+
+  // margin: 2%;
+  div {
+    background-color: white;
+    width: 80%;
+    border-radius: 15px;
+    margin-bottom: -50px;
+    overflow: scroll;
+    padding: 4px;
+    max-height: 70vh;
+    .event {
+      margin: 1% auto;
+      width: 80%;
+      height: 14vh;
+      background-color: white;
+      padding: 2%;
+
+      @include display;
+      flex-direction: column;
+
+      text-align: center;
+      h2 {
+        font-size: 1rem;
+        margin: 0;
+        text-transform: capitalize;
+        small {
+          font-weight: 500;
+        }
+      }
+      a {
+        margin: 0 0 1% 0;
+        text-decoration: none;
+        color: $darkerTurquoise;
+        .view-more {
+          display: none;
+        }
+      }
+      a:hover {
+        color: $crimson;
+        img {
+          width: 7%;
+          margin: 0;
+        }
+        .view-more {
+          margin: 0 5px;
+          display: inline-block;
+        }
+      }
+
+      div {
+        @include display;
+        background-color: $lavender;
+        width: 100%;
+        padding: 1%;
+        margin: 0 auto;
+      }
+      .line {
+        opacity: 20%;
+        border: 1px solid $darkerTurquoise;
+        padding: 0;
+      }
+    }
+  }
+}
+.events {
+  display: block;
+  box-shadow: 2px 2px 4px $darkerTurquoise;
+  margin: 0 auto;
+}
+
+form {
+  @include display;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  lable {
+    margin: 10px auto;
+    width: 90%;
+    select,
+    input {
+      width: 100%;
+      height: 4vh;
+      border: 1.5px solid $darkerTurquoise;
+      border-radius: 10px;
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+      border: 1.7px solid $darkerTurquoise;
+      border-radius: 10px;
+    }
+    textarea:focus,
+    input:focus {
+      outline: none;
+      border: 3px solid $crimson;
+    }
+  }
+  .submit {
+    margin: 10px auto;
+    width: 90%;
+    height: 4vh;
+    border-radius: 20px;
+    color: $crimson;
+    background-color: $lavender;
+    font-weight: bolder;
+    font-size: 1rem;
+    border: none;
+    border: 2px solid $turquoise;
+  }
+  .submit:hover {
+    background-color: $crimson;
+    color: $lavender;
+    border: none;
+  }
+}
+.showForm {
+  margin: 0 auto;
+  box-shadow: 2px 2px 4px $darkerTurquoise;
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  border: 3px solid $lavender;
+}
+.showpage {
+  background-color: $lightStealblue;
+  padding: 4px;
+}
+.show {
+  background-color: white;
+  width: 90%;
+  height: 30.5vh;
+  margin: 10px auto;
+  padding: 2%;
+  text-align: center;
+  @include display;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 4px $darkerTurquoise;
+
+  span {
+    margin: 10px;
+  }
+  h2 {
+    padding-top: 20px;
+    text-transform: capitalize;
+
+    margin: 0 auto;
+  }
+  h3 {
+    margin: 0;
+  }
+  p {
+  }
+}
+button {
+  color: lavender;
+  background-color: $crimson;
+  border: none;
+  margin: 10px;
+  border-radius: 10px;
+  width: 20%;
+  font-weight: 900;
+  color: white;
+  border: 2px solid rgb(0, 119, 255);
+}
+button:hover {
+  background-color: rgb(0, 119, 255);
+  transform: scale(1.1);
+}
+
+// .forms {
+//   display: block;
+//   margin: 0 auto;
+//   width: 70%;
+//   border-radius: 5%;
+// }
+footer {
+  @include display;
+  flex: 0;
+  height: 4vh;
+  background-color: $lavender;
+  padding: 5px;
+  a {
+    text-decoration: none;
+    color: $darkerTurquoise;
+    font-weight: 900;
+  }
+  a:hover {
+    transform: scale(1.1);
+
+    color: $crimson;
+  }
+  //height: 50px;
+}

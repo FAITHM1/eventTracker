@@ -81,6 +81,6 @@ function show(props) {
       </>
     );
   }
-  return <h1>this show</h1>;
+  return <div style={(color = "red")}>loading.....</div>;
 }
 export default show;
